@@ -1,0 +1,411 @@
+﻿<SwapChainBackgroundPanel
+    x:Class="FollowerCatcher.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FollowerCatcher"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="1280"
+    d:DesignHeight="800" PointerMoved="SwapChainBackgroundPanel_PointerMoved" Tapped="SwapChainBackgroundPanel_Tapped" PointerPressed="SwapChainBackgroundPanel_PointerPressed" PointerReleased="SwapChainBackgroundPanel_PointerReleased" ManipulationStarted="SwapChainBackgroundPanel_ManipulationStarted" ManipulationDelta="SwapChainBackgroundPanel_ManipulationDelta" ManipulationCompleted="SwapChainBackgroundPanel_ManipulationCompleted">
+	<SwapChainBackgroundPanel.Resources>
+		<Storyboard x:Name="MainAnim">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scores" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Game" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="-59.7" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Scores" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="-59.7" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Game" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scores">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Game">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Main">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="End" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="End">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="-45" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="End" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ScoreAnim">
+			<DoubleAnimation Duration="0:0:0.4" To="-59.7" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="-59.7" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Game" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Game" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Main">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Game">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Scores">
+				<EasingDoubleKeyFrame KeyTime="0" Value="59.7">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scores">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scores">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="GameAnim">
+			<DoubleAnimation Duration="0:0:0.4" To="-59.7" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="-59.7" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Scores" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scores" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Main">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scores">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Game">
+				<EasingDoubleKeyFrame KeyTime="0" Value="59.7">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Game">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Game">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="EndAnim">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scores" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="End" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Main">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scores">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="End">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Game" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Game">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="-45" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Main" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="-45" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Scores" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.4" To="-45" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Game" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<CubicEase EasingMode="EaseInOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="End">
+				<EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+	</SwapChainBackgroundPanel.Resources>
+	<Grid>
+		
+		<MediaElement HorizontalAlignment="Left" Height="88.881" Margin="0.745,-110.896,0,0" VerticalAlignment="Top" Width="186.568" Source="Music/FollowerCatcherSong.wav"/>
+		<Image x:Name="image" Source="img/fondo.png" Stretch="UniformToFill"/>
+		<Grid x:Name="Main" RenderTransformOrigin="0.5,0.5" Margin="0">
+			<Grid.Background>
+				<ImageBrush/>
+			</Grid.Background>
+			<Grid.RenderTransform>
+				<CompositeTransform/>
+			</Grid.RenderTransform>
+			<Grid Width="514" Height="440" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,50,0,0">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="#" VerticalAlignment="Top" FontFamily="{StaticResource ContentControlThemeFontFamily}" FontSize="40" Margin="10,176,0,0" RenderTransformOrigin="0.432,0.935"/>
+				<TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Hashtag, Mode=TwoWay}" VerticalAlignment="Top" Margin="34,172,0,0" Foreground="#F8FFFFFF" Background="Transparent" FontSize="40" Padding="4,0" Width="162" Height="55"/>
+				<Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200" Margin="0,240,0,0" Click="PlayClick">
+					<Image Height="128" Source="img/play.png" Stretch="Fill" Width="128"/>
+				</Button>
+				<Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="130" Margin="213,170,0,0" Click="ScoreClick">
+					<Image Source="img/white-star-th.png" Height="36" Width="38.222"/>
+				</Button>
+				<Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="130" Margin="213,310,0,0">
+					<Image Source="img/twitter.png"/>
+				</Button>
+				<Button Content="facebook" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="130" Margin="355,310,0,0"/>
+				<Image Source="img/logo.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="374" Height="134"/>
+			</Grid>
+		</Grid>
+		<Grid x:Name="Scores" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+			<Grid.RenderTransform>
+				<CompositeTransform/>
+			</Grid.RenderTransform>
+			<Button Content="Button" HorizontalAlignment="Left" Height="52" Margin="75.75,61.875,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource BackButtonStyle}" Click="BackClick"/>
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hall of fame" VerticalAlignment="Top" FontSize="56" Margin="136,54,0,0"/>
+			<ItemsControl  ItemsSource="{Binding Score}" HorizontalAlignment="Left" Height="618" Margin="83.25,133.875,0,0" VerticalAlignment="Top" Width="507"/>
+		</Grid>
+		<Grid x:Name="Game" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+			<Grid.RenderTransform>
+				<CompositeTransform/>
+			</Grid.RenderTransform>
+			<Border HorizontalAlignment="Right" Margin="0,33.437,30.444,0" VerticalAlignment="Top" Padding="20" Height="107" Background="{StaticResource GameColor}">
+				<Grid>
+					<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="YOUR FOLLOWERS" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="21.333"/>
+					<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Followers}" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="42.667" Margin="0,26.863,-0.617,0"/>
+				</Grid>
+			</Border>
+			<Border HorizontalAlignment="Right" Margin="0,33.437,260.44,0" VerticalAlignment="Top" Padding="20" Height="107" Background="{StaticResource GameColor}" MinWidth="150">
+				<Grid>
+					<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="MILES" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="21.333"/>
+					<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Miles}" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="42.667" Margin="0,26.863,-0.617,0"/>
+				</Grid>
+			</Border>
+			<Border HorizontalAlignment="Right" Margin="0,30,1,22" VerticalAlignment="Bottom" Padding="20" Height="107" Background="{StaticResource GameColor}" Width="482" RenderTransformOrigin="0.5,0.5">
+				<Border.RenderTransform>
+					<CompositeTransform ScaleX="0.9" ScaleY="0.9"/>
+				</Border.RenderTransform>
+				<Grid>
+					<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding ActualUser}" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="21.333"/>
+					<TextBlock TextWrapping="Wrap" Text="{Binding ActualTweet}" FontFamily="Segoe UI Semibold" FontSize="14.667" Margin="0,26.863,-0.617,0"/>
+				</Grid>
+			</Border>
+			<Button Content="Button" HorizontalAlignment="Left" Height="52" Margin="75.75,61.875,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource BackButtonStyle}" Click="BackClick"/>
+		</Grid>
+		<Grid x:Name="End" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+			<Grid.RenderTransform>
+				<CompositeTransform/>
+			</Grid.RenderTransform>
+			<Image Margin="0" Source="img/fondo·nd.png" Stretch="UniformToFill"/>
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="GAME OVER" VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Margin="131,69,0,0"/>
+			<StackPanel Margin="85,150,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="YOUR SCORE: " VerticalAlignment="Center" FontSize="24"/>
+				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Followers}" VerticalAlignment="Center" FontSize="24" Margin="0,0.3,0,-0.3"/>
+			</StackPanel>
+			<Button Content="Button" HorizontalAlignment="Left" Height="52" Margin="75.75,61.875,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource BackButtonStyle}" Click="BackClick"/>
+		</Grid>
+	</Grid>
+</SwapChainBackgroundPanel>
